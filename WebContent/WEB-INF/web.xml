@@ -10,5 +10,15 @@
         <servlet-name>com.wenyousanguo.servlet.LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+    
+        <servlet>
+        <servlet-name>com.wenyousanguo.servlet.RegisterServlet</servlet-name>
+        <servlet-class>com.wenyousanguo.servlet.RegisterServlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>com.wenyousanguo.servlet.RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
  
 </web-app>
