@@ -3,6 +3,7 @@
     <%@page  import="java.text.*"%>
   <%@include file="header.jsp" %>
   <%@include file="top.jsp" %>
+  <!DOCTYPE html>
 <div align="center">
 	<img  src ="image/foreLogin.jpg"/><br> <br>
 	<%="大江东去，浪淘尽，千古风流人物。"%><br>

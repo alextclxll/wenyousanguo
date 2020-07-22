@@ -1,9 +1,19 @@
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*"%>
 <%@page  import="java.text.*"%>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><
-<div align="center"><br>
   <%@include file="top.jsp" %>
-<form action="register" method="post">
+  <%@include file="header.jsp" %>
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+	$(function(){
+		$("#b1").click(function(){
+			alert("666");
+		});
+	});
+</script>
+<div align="center"><br>
+  
 	<table >
 		<tr>
 			<td>登 录 名 :</td>
@@ -17,12 +27,8 @@
 			<td>确认密码:</td>
 			<td><input placeholder="请确认密码"></td>
 		</tr>
-		<tr style="left:20px;">
-			<td bgcolor="red" width="20px;"><input id="submit" type="submit" value="提交"></td>
-		</tr>
-	
-	</table>
-</form>
+	</table><br>
+			<button id="b1" onclick="register">注册</button>
 
 
 
@@ -36,3 +42,4 @@
 <%@include file="footer.jsp" %>
 </div> 
 
+</html>
