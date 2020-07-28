@@ -16,10 +16,12 @@ public class RegisterServlet extends HttpServlet {
 		 request.setCharacterEncoding("UTF-8");
 		 String name=request.getParameter("userRegisterName");
 		 String password=request.getParameter("userRegisterPassword");
-		 System.out.println(name);
+		// System.out.println(name);
         UserService userService=new UserService();
+        userService.selectUser(name, password);
         try {
-            userService.addUser(name, password);
+   //         userService.addUser(name, password);
+    //        request.getRequestDispatcher("gamefore.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

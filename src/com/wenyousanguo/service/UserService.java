@@ -3,27 +3,59 @@ package com.wenyousanguo.service;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import com.wenyousanguo.dao.UserDAO;
 
 public class UserService implements UserDAO{
-
-	@Override
-	public void  addUser(String name, String password) {
+	Connection con;
+	public  UserService(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/wenyousanguo?characterEncoding=UTF-8","root","admin");
-			String sql="insert into user values(null,?,?,?)";
-			PreparedStatement ps=con.prepareStatement(sql);
-			ps.setString(1, name);
-			ps.setString(2, password);
-			ps.setString(3, "2020-02-02");
-			ps.execute();
-		} catch (ClassNotFoundException | SQLException e) {
+			 con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/wenyousanguo?characterEncoding=UTF-8","root","admin");
+	} catch (ClassNotFoundException | SQLException e) {
 			
 			e.printStackTrace();
 		}
+}
+	@Override
+	public void  addUser(String name, String password) {
+		
+			String sql="insert into user values(null,?,?,?)";
+			PreparedStatement ps;
+			try {
+				ps = con.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2, password);
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+			String date=sdf.format(new Date());
+			//System.out.println(s);
+			ps.setString(3, date);
+			ps.execute();
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+	
+	}
+	@Override
+	public void selectUser(String name, String password) {
+	String sql="select name from user where name='?' ";
+	try {
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1, name);
+		ResultSet rs = ps.executeQuery();
+		if(rs.next()){
+			System.out.println(rs.getString("name"));
+		}
+	} catch (SQLException e) {
+		
+		e.printStackTrace();
+	}
+		
 	}
 
 }

@@ -9,7 +9,7 @@ import java.sql.Connection;
 
 public class Test {
 	public static void main(String[] args) {
-		try {
+	try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/wenyousanguo?characterEncoding=UTF-8","root","admin");
@@ -22,5 +22,6 @@ public class Test {
 			
 			e.printStackTrace();
 		}
+
 	}
 }
