@@ -14,7 +14,7 @@ public class RegisterServlet extends HttpServlet {
 
 	public void service(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException{
 		 request.setCharacterEncoding("UTF-8");
-		 String name=request.getParameter("userRegisterName");
+		 String name=request.getParameter("userRegisterAccount");
 		 String password=request.getParameter("userRegisterPassword");
 		// System.out.println(name);
         UserService userService=new UserService();

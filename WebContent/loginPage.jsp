@@ -8,12 +8,12 @@
 <form action="register" method="post">
 	<table >
 		<tr>
-			<td>登 录 名 :</td>
-			<td><input placeholder="一旦确认无法修改" name="userRegisterName"> </td>
+			<td>登录账号 :</td>
+			<td><input oninput = "value=value.replace(/[^\d]/g,'')" placeholder="请输入数字账号" name="userRegisterAccount" > </td>
 		</tr>
 		<tr>
 			<td>登录密码:</td>
-			<td ><input placeholder="请输入密码" name="userRegisterPassword"></td>
+			<td ><input type="password" oninput = "value=value.replace(/[^\d]/g,'')"  placeholder="请输入密码" name="userRegisterPassword"></td>
 		</tr>
 		<tr></tr>
 		<tr>

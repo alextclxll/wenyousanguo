@@ -42,14 +42,14 @@ public class UserService implements UserDAO{
 	
 	}
 	@Override
-	public void selectUser(String name, String password) {
-	String sql="select name from user where name='?' ";
+	public void selectUser(String account, String password) {
+	String sql="select account from user where account=? ";
 	try {
 		PreparedStatement ps=con.prepareStatement(sql);
-		ps.setString(1, name);
+		ps.setString(1, account);
 		ResultSet rs = ps.executeQuery();
 		if(rs.next()){
-			System.out.println(rs.getString("name"));
+		//	System.out.println(rs.getString("account"));
 		}
 	} catch (SQLException e) {
 		
